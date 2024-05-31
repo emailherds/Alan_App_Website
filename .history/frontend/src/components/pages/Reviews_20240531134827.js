@@ -36,7 +36,7 @@ function Reviews() {
         <Card className='review-summary-card'>
           <Row>
             <Col className='review-column'>
-              <div className='review-summary-title'>Alan App</div>
+              <Card.Title className='review-summary-title'>Alan App</Card.Title>
               <div className='review-stars'>
                 {Array.from({ length: 5 }, (_, i) => (
                   <span key={i} className='star'>

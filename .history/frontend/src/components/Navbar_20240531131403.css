@@ -63,6 +63,10 @@
   transition: all 0.2s ease-out;
 }
 
+.sign-up-button{
+  height: 90%;
+}
+
 .fa-bars {
   color: #fff;
 }

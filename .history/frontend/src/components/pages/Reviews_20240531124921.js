@@ -1,11 +1,12 @@
-import React, { useEffect , useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../App.css';
-import axios from "axios";
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col';
+import axios from 'axios';
 import Container from 'react-bootstrap/Container';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Reviews.css'; // Create and import a custom CSS file for additional styling
 
 function Reviews() {
   const [reviews, setReviews] = useState([]);
@@ -13,7 +14,7 @@ function Reviews() {
 
   useEffect(() => {
     setLoading(true);
-    axios.get("http://localhost:5555/reviews").then(
+    axios.get('http://localhost:5555/reviews').then(
       response => {
         setReviews(response.data.data);
         setLoading(false);
@@ -21,36 +22,30 @@ function Reviews() {
     ).catch((error) => {
       console.log(error);
       setLoading(false);
-    })
-  }, [])
+    });
+  }, []);
 
-  let total = 0;
-  for(let i = 0; i < reviews.length; i++){
-    total += reviews[i].rating
-  }
-  const average = reviews.length ? (total / reviews.length).toFixed(1) : 0;
+  const averageRating = reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length || 0;
 
   return (
     <div className='review'>
-      <Container className='review-summary mb-3'>
-        <Card className='review-summary-card'>
-          <Row>
-            <Col className='review-column'>
-              <div className='review-summary-title'>Alan App</div>
-              <div className='review-stars'>
-                {Array.from({ length: 5 }, (_, i) => (
-                  <span key={i} className='star'>
-                    {i < Math.round(average) ? '★' : '☆'}
-                  </span>
-                ))}
-              </div>
-              <Card.Text>{reviews.length} Reviews</Card.Text>
-            </Col>
-            <Col className='review-app-image'>
-              <img src='path_to_image.jpg' alt='App Image' className='img-fluid' />
-            </Col>
-          </Row>
-        </Card>
+      <h1>Reviews</h1>
+      <Container className='review-summary'>
+        <Row>
+          <Col>
+            <h2 className='review-average'>{averageRating.toFixed(1)}</h2>
+            <div className='review-stars'>
+              {Array.from({ length: 5 }, (_, i) => (
+                <span key={i} className='star'>
+                  {i < Math.round(averageRating) ? '★' : '☆'}
+                </span>
+              ))}
+            </div>
+          </Col>
+          <Col className='text-end'>
+            <p>Over {reviews.length} Reviews</p>
+          </Col>
+        </Row>
       </Container>
       {loading ? (
         <h2>Loading</h2>
@@ -83,4 +78,4 @@ function Reviews() {
   );
 }
 
-export default Reviews
+export default Reviews;

@@ -35,8 +35,8 @@ function Reviews() {
       <Container className='review-summary mb-3'>
         <Card className='review-summary-card'>
           <Row>
-            <Col className='review-column'>
-              <div className='review-summary-title'>Alan App</div>
+            <Col md={6} className='review-column'>
+              <Card.Title className='review-summary-title'>Alan App</Card.Title>
               <div className='review-stars'>
                 {Array.from({ length: 5 }, (_, i) => (
                   <span key={i} className='star'>
@@ -46,7 +46,7 @@ function Reviews() {
               </div>
               <Card.Text>{reviews.length} Reviews</Card.Text>
             </Col>
-            <Col className='review-app-image'>
+            <Col md={6} className='d-flex align-items-center justify-content-center'>
               <img src='path_to_image.jpg' alt='App Image' className='img-fluid' />
             </Col>
           </Row>

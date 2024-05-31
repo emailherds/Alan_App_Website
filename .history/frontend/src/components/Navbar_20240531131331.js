@@ -40,6 +40,7 @@ function Navbar() {
                 </Link>
               </li>
             </ul>
+            {button && <Button className='sign-up-button'>Sign Up</Button>}
         </nav>
     </>
   );

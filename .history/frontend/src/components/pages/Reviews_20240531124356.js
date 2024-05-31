@@ -24,47 +24,22 @@ function Reviews() {
     })
   }, [])
 
-  let total = 0;
-  for(let i = 0; i < reviews.length; i++){
-    total += reviews[i].rating
-  }
-  const average = reviews.length ? (total / reviews.length).toFixed(1) : 0;
-
   return (
     <div className='review'>
-      <Container className='review-summary mb-3'>
-        <Card className='review-summary-card'>
-          <Row>
-            <Col className='review-column'>
-              <div className='review-summary-title'>Alan App</div>
-              <div className='review-stars'>
-                {Array.from({ length: 5 }, (_, i) => (
-                  <span key={i} className='star'>
-                    {i < Math.round(average) ? '★' : '☆'}
-                  </span>
-                ))}
-              </div>
-              <Card.Text>{reviews.length} Reviews</Card.Text>
-            </Col>
-            <Col className='review-app-image'>
-              <img src='path_to_image.jpg' alt='App Image' className='img-fluid' />
-            </Col>
-          </Row>
-        </Card>
-      </Container>
+      <h1>Reviews</h1>
       {loading ? (
         <h2>Loading</h2>
       ) : (
         reviews.map((review, index) => (
           <Container key={index} className='mb-3'>
-            <Card className='review-card'>
+            <Card>
               <Card.Body>
                 <Row>
                   <Col>
-                    <Card.Title className='review-title'>{review.name}</Card.Title>
+                    <Card.Title>{review.name}</Card.Title>
                   </Col>
                   <Col className='text-end'>
-                    <div className='review-stars'>
+                    <div>
                       {Array.from({ length: 5 }, (_, i) => (
                         <span key={i} className='star'>
                           {i < review.rating ? '★' : '☆'}
@@ -73,7 +48,7 @@ function Reviews() {
                     </div>
                   </Col>
                 </Row>
-                <Card.Text className='review-description'>{review.description}</Card.Text>
+                <Card.Text>{review.description}</Card.Text>
               </Card.Body>
             </Card>
           </Container>

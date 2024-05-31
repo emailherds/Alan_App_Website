@@ -32,23 +32,13 @@ function Reviews() {
 
   return (
     <div className='review'>
-      <Container className='review-summary mb-3'>
+      <Container className='review-summary'>
         <Card className='review-summary-card'>
           <Row>
-            <Col className='review-column'>
-              <div className='review-summary-title'>Alan App</div>
-              <div className='review-stars'>
-                {Array.from({ length: 5 }, (_, i) => (
-                  <span key={i} className='star'>
-                    {i < Math.round(average) ? '★' : '☆'}
-                  </span>
-                ))}
-              </div>
-              <Card.Text>{reviews.length} Reviews</Card.Text>
+            <Col>
+              <Card.Title className='review-summary-title'>The Alan App</Card.Title>
             </Col>
-            <Col className='review-app-image'>
-              <img src='path_to_image.jpg' alt='App Image' className='img-fluid' />
-            </Col>
+            <Col></Col>
           </Row>
         </Card>
       </Container>

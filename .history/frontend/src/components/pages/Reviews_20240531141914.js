@@ -28,7 +28,7 @@ function Reviews() {
   for(let i = 0; i < reviews.length; i++){
     total += reviews[i].rating
   }
-  const average = reviews.length ? (total / reviews.length).toFixed(1) : 0;
+  const averageRating = reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length || 0;
 
   return (
     <div className='review'>
@@ -40,7 +40,7 @@ function Reviews() {
               <div className='review-stars'>
                 {Array.from({ length: 5 }, (_, i) => (
                   <span key={i} className='star'>
-                    {i < Math.round(average) ? '★' : '☆'}
+                    {i < Math.round(averageRating) ? '★' : '☆'}
                   </span>
                 ))}
               </div>
