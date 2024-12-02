@@ -8,7 +8,6 @@
   
   .home,
   .about,
-  .features,
   .reviews {
     display: flex;
     height: 100vh;
@@ -35,7 +34,7 @@
     color: white;
     font-family: 'Courier New', Courier, monospace;
     height: 100vh;
-    
+
   }
 
   .reviews {

@@ -3,7 +3,7 @@ import { Review } from "../models/reviewModel.js";
 
 const router = express.Router();
 
-router.post('/', async (request, response) => {
+router.post('/api/', async (request, response) => {
     try {
         if(!request.body.name || !request.body.rating){
             return response.status(400).send({message: 'needs all required fields'})
@@ -24,7 +24,7 @@ router.post('/', async (request, response) => {
     }
 });
 
-router.get('/', async (request, response) => {
+router.get('/api/', async (request, response) => {
     try {
         const reviews = await Review.find({});
 
@@ -38,7 +38,7 @@ router.get('/', async (request, response) => {
     }
 });
 
-router.get('/:id', async (request, response) => {
+router.get('/api/:id', async (request, response) => {
     try {
         const {id} = request.params;
 
@@ -51,7 +51,7 @@ router.get('/:id', async (request, response) => {
     }
 });
 
-router.put('/:id', async (request, response) => {
+router.put('/api/:id', async (request, response) => {
     try {
         if(!request.body.name || !request.body.rating){
             return response.status(400).send({message: 'needs all required fields'})
@@ -71,7 +71,7 @@ router.put('/:id', async (request, response) => {
     }
 });
 
-router.delete('/:id', async(request, response) => {
+router.delete('/api/:id', async(request, response) => {
     try {   
         const {id} = request.params;
         

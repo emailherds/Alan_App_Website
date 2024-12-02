@@ -15,7 +15,7 @@ function Navbar() {
         <nav className="mynavbar">
             <div className="mynavbar-container">
               <Link to="/" className = "mynavbar-logo">
-                Alan App<img className = "alan-app-logo" src={`${process.env.PUBLIC_URL}/images/alan_logo.jpg`}></img>
+                Alan App<image src={`${process.env.PUBLIC_URL}/images/alan_logo.jpg`}></image>
               </Link>
             </div>
             <ul className={click ? 'mynav-menu active' : 'mynav-menu'}>

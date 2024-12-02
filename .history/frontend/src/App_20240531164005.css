@@ -34,8 +34,6 @@
     font-size: 30px;
     color: white;
     font-family: 'Courier New', Courier, monospace;
-    height: 100vh;
-    
   }
 
   .reviews {
@@ -105,17 +103,9 @@
   }
   
   .review-app-image{
-    padding: 20px;
+    padding: 10px;
+    padding-right: 10px;
   }
 
   .short-image{
-    width: auto;
-  }
-  
-  .review-image-card{
-    width: 95%;
-  }
-
-  .features-container{
-    margin-top: 0px;
   }

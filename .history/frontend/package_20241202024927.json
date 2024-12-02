@@ -40,9 +40,9 @@
       "last 1 safari version"
     ]
   },
-  "proxy": {
-    "/api": {
-      "target": "http://localhost:5555"
-    }
-  }
+  // "proxy": {
+  //   "/api": {
+  //     "target": "http://localhost:5555"
+  //   }
+  // }
 }

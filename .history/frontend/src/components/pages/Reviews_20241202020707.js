@@ -13,9 +13,8 @@ function Reviews() {
 
   useEffect(() => {
     setLoading(true);
-    axios.get("/api/reviews").then(
+    axios.get("/reviews").then(
       response => {
-        console.log("Here",response.data.data)
         setReviews(response.data.data);
         setLoading(false);
       }
@@ -26,11 +25,10 @@ function Reviews() {
   }, [])
 
   let total = 0;
-  let length = reviews.length ? reviews.length > 0 : 0;
-  for(let i = 0; i < length; i++){
+  for(let i = 0; i < reviews.length; i++){
     total += reviews[i].rating
   }
-  const average = length ? (total / reviews.length).toFixed(1) : 0;
+  const average = reviews.length ? (total / reviews.length).toFixed(1) : 0;
 
   return (
     <div className='review'>

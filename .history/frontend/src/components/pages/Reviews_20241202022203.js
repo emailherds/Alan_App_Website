@@ -13,9 +13,9 @@ function Reviews() {
 
   useEffect(() => {
     setLoading(true);
-    axios.get("/api/reviews").then(
+    axios.get("/reviews").then(
       response => {
-        console.log("Here",response.data.data)
+        console.log(response.data.data)
         setReviews(response.data.data);
         setLoading(false);
       }

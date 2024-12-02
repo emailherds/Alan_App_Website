@@ -34,8 +34,6 @@
     font-size: 30px;
     color: white;
     font-family: 'Courier New', Courier, monospace;
-    height: 100vh;
-    
   }
 
   .reviews {
@@ -92,6 +90,7 @@
   .review-summary-card {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
   }
 
   .review-column{
@@ -101,21 +100,8 @@
     justify-content: center;
     text-align: center;
     height: 100%; /* Ensure the column takes the full height */
-    padding: 30px;
   }
   
   .review-app-image{
-    padding: 20px;
-  }
-
-  .short-image{
-    width: auto;
-  }
-  
-  .review-image-card{
-    width: 95%;
-  }
-
-  .features-container{
-    margin-top: 0px;
+    padding: 0px;
   }

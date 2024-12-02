@@ -34,8 +34,7 @@
     font-size: 30px;
     color: white;
     font-family: 'Courier New', Courier, monospace;
-    height: 100vh;
-    
+    display:flex;
   }
 
   .reviews {
